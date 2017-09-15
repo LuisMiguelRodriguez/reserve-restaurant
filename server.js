@@ -10,6 +10,12 @@ var fs = require("fs");
 var app = express();
 var PORT = 3000;
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+
+
 var waitingList = [];
 
 var currentTables = [{
@@ -38,6 +44,8 @@ var currentTables = [{
   }
 ];
 
+var pageCount = 0;
+
 // / --> landing page
 // /tables
 // /reserve
@@ -46,37 +54,63 @@ var currentTables = [{
 // /api/clear
 
 
+//Serving main index.html file
+app.get('/pageCount', function(req,res){
+  res.send(pageCount);
+});
 
 app.get("/", (req, res) => {
 	res.sendFile(path.join(__dirname,"index.html"));
+  pageCount++;
+
 });
+
+//Serving reservation.html
 app.get("/reservation", (req, res) => {
 	res.sendFile(path.join(__dirname,"reservation.html"));
+  pageCount++;
 });
 
+// returns array of current tables
 app.get("/api/tables", (req, res) => {
     res.send(currentTables);
+  pageCount++;
+});
+app.get('/tables', function(req,res){
+  res.sendFile(path.join(__dirname, "tables.html"));
+  pageCount++;
 });
 
+//return array of the waiting list
 app.get("/api/waitlist", (req, res) => {
     res.send(waitingList);
+  pageCount++;
 });
 
+//clears both arrays
 app.get("/api/clear", (req, res) => {
     waitingList = [];
     currentTables = [];
     res.send("Database cleared!")
 });
 
+//post data to database
 app.post("/api/tables", (req, res) => {
   var data = req.body;
 
-  if(currentList.length >= 5){
+  if(currentTables.length >= 5){
     //push data to wishList
-    waitingList.push(data);
+      waitingList.push(data);
+    var tableNum = waitingList.length;
+
+    res.send("Sorry You are on the waiting List your are number " + (tableNum));
+
   } else {
-    //push to currentList
-    currentList.push(data);
+
+    currentTables.push(data);
+
+    res.send("Thank you for making a reservation");
+
   }
 
 });
