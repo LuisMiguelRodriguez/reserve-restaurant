@@ -1,0 +1,48 @@
+.display-3 {
+    text-align: center;
+    font-size: 52px;
+    font-weight: bold;
+}
+#subtitle {
+    text-align: center;
+    font-size:28px;
+    font-weight: bold;
+}
+.mainbutton {
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #000000;
+    text-align: center;
+    border-color: #000000;
+    margin-top: 10px;
+}
+#submit {
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #000000;
+    text-align: center;
+    border-color: #000000;
+    margin-bottom: 10px;
+}
+#header{
+    background-color:gray;
+
+}
+.tables{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 18px;
+    background-color:rgba(0, 0, 0, 0.4);
+    border-color:  rgba(0, 0, 0, 0.4);
+    min-height: 80px;
+}
+#table-style{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.cardheader{
+    background-color: #000000;
+    color: #ffffff;
+}

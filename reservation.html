@@ -1,11 +1,63 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>Reseservations Page</h1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  </body>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href= "https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Hot Resturant</title>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron" id="header">
+            <div class="container" >
+                <h1 class="display-3">Hot Resturant</h1>
+                <h2 id="subtitle">Make your reservation</h2>
+                <div class="text-center">
+                    <a class= "btn btn-primary btn-lg mainbutton" href="/table" role="button"><span class="oi oi-fire">View Table</span></a>
+                    <a class="btn btn-primary btn-lg mainbutton" href="/" role="button"><span class="oi oi-credit-card"></span>Main</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+            <div class="card">
+                <h3 class="card-header">Table Reservation</h3>
+                <div class="card-block">
+                    <div class="container">
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone-number">Phone Number</label>
+                                <input type="text" class="form-control" id="phonenumber" placeholder="123-123-123">
+                            </div>
+                            <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+                            <div class="form-group">
+                                    <label for="uniqueid">Unique ID</label>
+                                    <input type="text" class="form-control" id="uniqueid" placeholder="">
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script src="reservation.js"></script>
+</body>
 </html>
